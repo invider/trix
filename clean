@@ -1,5 +1,14 @@
 #!/bin/bash
 
+if [ -f ./system/server.pid ]; then
+  echo -n 'Shutting down the server...'
+  cd ./system
+  ./kill-server
+  cd ..
+  echo 'OK'
+fi
+
+
 # clean home folder
 cd home
 ./clean
