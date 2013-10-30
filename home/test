@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for i in $(ls | grep solution.); do
+for i in $(ls | grep test.); do
   bash $i
   sleep 2s
 done

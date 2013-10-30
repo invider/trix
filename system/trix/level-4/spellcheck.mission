@@ -2,7 +2,10 @@ Mission: spellcheck
 
 Steps:
 
-> check data/unix.commands file agains the english dictionary in data/
+> check data/vi.man file agains the english dictionary in data/
+  to do that, you need to extract and sort out all words in vi.man of 3 or more letters,
+  compare that list with one contained in data/english.dict
+  and count words that are missing in dictionary or misspelled  
 
-[key]: number of misspelled/missing words
+[key]: number of misspelled/missing words in data/vi.man, consider only words of 3 and more letters
 

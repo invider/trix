@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo ''
+echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
+echo '                       Solving Level 4'
+echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
+
+cat data/vi.man | tr -cs 'a-zA-Z' '\n' | tr '[A-Z]' '[a-z]' | sort | uniq | awk '{ if (length($0) > 2) print }' > vi.man.words.tmp
+./solve spellcheck `diff data/english.dict vi.man.words.tmp --changed-group-format='%>' --unchanged-group-format='' | wc -l | tr -d ' '`
+
+# next level
+./.levelup
+
