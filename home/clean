@@ -2,6 +2,7 @@
 
 echo -n 'Cleaning home...'
 
+rm -f *.temp
 rm -f *.solution*
 rm -f *.mission*
 rm -f *.key*

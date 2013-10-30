@@ -1,0 +1,4 @@
+#!/bin/bash
+
+chmod u+x .level .levelup .path badges missions score setup solve status
+

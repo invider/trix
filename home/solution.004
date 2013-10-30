@@ -2,10 +2,9 @@
 
 echo ''
 echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
-echo '                       Solving Level 3'
+echo '                       Solving Level 4'
 echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
 
-./solve tga `cat data/ls.man data/vi.man | grep '^[^A-Za-z]' | wc -l | tr -d ' '` 
 
 
 # next level
