@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [  `ls -a | grep '\.level-' | wc -l`  = 0 ]
+then
+	echo '000'
+else
+	ls -a | grep '\.level-' | sort -r | head -n 1 | cut -f 2 -d '-'
+fi
+

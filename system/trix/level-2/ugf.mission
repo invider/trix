@@ -1,0 +1,10 @@
+Mission: uge
+
+Steps:
+
+> determine the number of lines starting with low-cased word
+  which contains at least 7 symbols
+  in data/vi.man
+
+[key]: the found number of lines
+

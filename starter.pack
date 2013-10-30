@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# create trix starter tarball
+
+./clean
+
+cd home
+rm -f ../system/trix/trix.tar
+tar -cvf ../system/trix/trix.tar --exclude=solution* --exclude=data* --exclude=clean* .
+

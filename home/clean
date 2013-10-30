@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo -n 'Cleaning home...'
+
+rm -f *.solution*
+rm -f *.mission*
+rm -f *.key*
+rm -f *.tar*
+rm -f *.sh*
+rm -rf data
+rm -f .level-*
+rm -f .mc
+rm -f .mo
+rm -f .d
+rm -f .location
+rm -f .solutions
+
+echo 'OK'
+

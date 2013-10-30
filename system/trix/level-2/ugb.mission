@@ -1,0 +1,9 @@
+Mission: ugb
+
+Steps:
+
+> determine the number of lines that begin with the word 'specified'
+  in data/vi.man
+
+[key]: the found number
+

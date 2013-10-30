@@ -1,0 +1,6 @@
+# start Python CGI http server
+# Note: the content of htbin/ should be marked as executable
+
+nohup python -m CGIHTTPServer 8908 > server.log 2>&1&
+echo $! > server.pid
+

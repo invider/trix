@@ -1,0 +1,10 @@
+Mission: ugg
+
+Steps:
+
+> determine the number of lines containing the words
+  that ends with 'ion'
+  in data/vi.man
+
+[key]: the found number of lines
+

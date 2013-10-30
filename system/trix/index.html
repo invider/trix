@@ -1,0 +1,70 @@
+
+<h1>Welcome to TRIX</h1>
+<p align="center"><big>--- <i>Training (interactive) for UNIX</i> ---</big></p>
+
+<p>
+Your are about to start a journey through the wonderful UNIX landscape.
+</p>
+<p>
+This world of files and pipes is at the end of your fingertips,
+waiting to be discovered. Take that journey and you will master
+the UNIX shell and look into the deepest places on the filesystem.
+</p>
+
+<h3>Rules</h3>
+
+<p>The TRIX operates on the following rules:</p>
+
+<li>your goal is to get the highest score by completing missions
+
+<li>to complete a mission you need to follow the mission instructions
+  and figure out the key for the data package - you need that key
+  in order to download the package from the target server
+
+<li>a data package is a text file downloaded from the target server.
+  Any data package will complete an associated mission and could
+  open new missions as well
+  
+<li>you can create files only inside the trix directory and your status
+  is tracked only based on the content of that directory
+
+<li>use available tools to monitor your status and currently open missions
+
+
+
+<h3>Tools</h3>
+
+
+<p>There are tools that could help you track your progress.</p>
+
+<pre>
+./status - shows the overall progress
+./score - shows current score for completed missions
+./badges - shows badges received
+./missions - shows completed and open missions
+</pre>
+
+<hr>
+<p><b>Mission: uwget</b></p>
+
+<pre>
+[-] find out the address of your target server
+[-] download the uwget package, the key is [http]
+[-] look for new missions inside
+</pre>
+
+<p><b>Tips:</b> data packages are files published on the target http server,
+      they all named as following [data package name]-[key].pack
+      e.g. uwget package will be named uwget-http.pack and located
+      at http://[targetserver]/trix/uwget-http.pack
+      <br>
+      Therefore, you can download a data package only by knowing
+      it's key, since it is a part of it's URL
+</p>
+
+<hr>
+
+<p>You can download the starter kit <a href="trix.tar">here</a></p>
+
+<h3>Good luck!</h3>
+

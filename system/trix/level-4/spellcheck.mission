@@ -1,0 +1,8 @@
+Mission: spellcheck
+
+Steps:
+
+> check data/unix.commands file agains the english dictionary in data/
+
+[key]: number of misspelled/missing words
+

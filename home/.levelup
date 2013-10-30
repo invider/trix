@@ -1,0 +1,45 @@
+#!/bin/bash
+
+source ./target
+#echo "Target: "$TARGET
+
+function load {
+  echo 'Loading Level #'$levelup'...'
+  echo 'Target: '$TARGET
+
+  for i in $(curl --silent `echo $TARGET`$1/.manifest)
+  do
+    # delay for cinematographic feel
+    echo -n 'Downloading '$i
+    for j in {1..4}; do
+      echo -n '.'
+      sleep 1s
+    done
+    wget --quiet -N `echo $TARGET``echo $1`'/'$i
+    # save file location
+    echo 'file::'$i' '$1 >> .location
+    echo 'OK'
+  done
+}
+
+# check the level
+score=`./score`
+level=`./.level`
+leveln=$(sed -e 's/^0*//'<<<"$level")
+
+if [[ $leveln = '' ]]; then
+  echo 'Getting initial level'
+  load 'level-1'
+
+else
+  next=`cat .level-$level`
+  if [[ $score -ge $next ]]; then
+    levelup=$(($leveln + 1))
+    echo 'Level Complete!'
+    load 'level-'$levelup
+  #else
+  #  echo 'not enough score!'
+  fi
+
+fi
+

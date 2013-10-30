@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo ''
+echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
+echo '                       Solving Level 3'
+echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
+
+./solve tga `cat data/ls.man data/vi.man | grep '^[^A-Za-z]' | wc -l | tr -d ' '` 
+
+
+# next level
+./.levelup
+

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# clean home folder
+cd home
+./clean
+cd ..
+
+# clean system folder
+echo -n 'Cleaning system...' 
+
+rm -f system/server.pid
+rm -f system/server.log
+rm -f system/trix/trix.tar
+echo 'OK'
+

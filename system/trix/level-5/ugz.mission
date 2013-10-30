@@ -1,0 +1,12 @@
+Mission: ugz
+
+Steps:
+
+* unpack supplied data.tar
+
+* get the clean list of unix commands from ./data/unix.commands.
+  It MUST contain only command names each on a new line with
+  no additional information
+
+[key]: MD5 hash of the resulting list
+

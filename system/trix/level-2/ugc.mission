@@ -1,0 +1,9 @@
+Mission: ugc
+
+Steps:
+
+> determine the number of lines that ends with the word 'specified'
+  in data/vi.man
+
+[key]: the found number
+

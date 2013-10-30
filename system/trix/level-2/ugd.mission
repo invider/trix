@@ -1,0 +1,10 @@
+Mission: ugd
+
+Steps:
+
+> determine the number of lines that contains character 'c'
+  followed by single other character (any character) and followed by 'r'
+  in data/vi.man
+
+[key]: the found number of lines
+

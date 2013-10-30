@@ -1,0 +1,9 @@
+Mission: tga
+
+Steps:
+
+> determine the number of lines starting not with letter
+  in data/ls.man and data/vi.man combined
+
+[key]: found number of lines
+

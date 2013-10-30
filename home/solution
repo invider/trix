@@ -1,0 +1,11 @@
+#!/bin/bash
+
+for i in $(ls | grep solution.); do
+  bash $i
+  sleep 2s
+done
+
+echo ''
+echo '-------------------------------------------------------------------------------------------'
+./status
+
