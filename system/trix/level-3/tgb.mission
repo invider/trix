@@ -1,0 +1,9 @@
+Mission: tgb
+
+Steps:
+
+> determine the number of lines containing the word 'like'
+  in data/ls.man
+
+[key]: found number of lines
+

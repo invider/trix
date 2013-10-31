@@ -1,0 +1,8 @@
+Mission: tgc
+
+Steps:
+
+> how many lines in data/vi.man not contain the word 'option'?
+
+[key]: found number of lines
+

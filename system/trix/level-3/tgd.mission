@@ -1,0 +1,11 @@
+Mission: tgd
+
+Steps:
+
+> print all lines that contain the word 'default' with 2 lines that precede each such line
+  in data/ls.man
+
+> calculate md5 hashsum of the output
+
+[key]: found md5 hashsum
+

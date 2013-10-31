@@ -7,6 +7,20 @@ echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
 
 ./solve tga `cat data/ls.man data/vi.man | grep '^[^A-Za-z]' | wc -l | tr -d ' '` 
 
+./solve tgb `cat data/ls.man | grep -i '\<like\>' | wc -l | tr -d ' '`
+
+./solve tgc `cat data/vi.man | grep -vw 'option' | wc -l | tr -d ' '`
+
+# macosx
+./solve tgd `cat data/ls.man | grep -iw -B 2 'default' | md5`
+# linux
+./solve tgd `cat data/ls.man | grep -iw -B 2 'default' | md5sum`
+
+# macos
+./solve tge `cat data/vi.man | grep -iw -A 3 'command' | md5`
+# linux
+./solve tge `cat data/vi.man | grep -iw -A 3 'command' | md5sum`
+
 
 # next level
 ./.levelup

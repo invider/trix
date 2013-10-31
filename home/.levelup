@@ -15,7 +15,7 @@ function load {
       echo -n '.'
       sleep 1s
     done
-    wget --quiet -N `echo $TARGET``echo $1`'/'$i
+    wget --quiet -N -x -nH --cut-dirs=2 `echo $TARGET``echo $1`'/'$i
     # save file location
     echo 'file::'$i' '$1 >> .location
     echo 'OK'
@@ -36,6 +36,7 @@ else
   if [[ $score -ge $next ]]; then
     levelup=$(($leveln + 1))
     echo 'Level Complete!'
+    echo 'Level #'$leveln': '$score' >> '$next >> .level.log
     load 'level-'$levelup
   #else
   #  echo 'not enough score!'
