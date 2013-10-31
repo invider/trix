@@ -21,6 +21,10 @@ echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
 # linux
 ./solve tge `cat data/vi.man | grep -iw -A 3 'command' | md5sum`
 
+./solve tgf `cat data/english.dict | grep '[eo]' | grep -v '[ia]' | wc -l | tr -d ' '`
+
+./solve tgg `cat data/english.dict | grep 'ion\>' | grep -v "'" | sort -r | md5`
+./solve tgg `cat data/english.dict | grep 'ion\>' | grep -v "'" | sort -r | md5sum`
 
 # next level
 ./.levelup

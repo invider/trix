@@ -1,0 +1,12 @@
+Mission: tgg
+
+Steps:
+
+> find all words that ends in 'ion' from English dictionary
+
+> sort them in reverse order (from z to a)
+
+> calculate md5 hashsum of the output
+
+[key]: found md5 hashsum
+

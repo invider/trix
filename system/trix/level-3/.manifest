@@ -1,4 +1,5 @@
 .level-003
+upgrade-sort.sh
 tga.mission
 tgb.mission
 tgc.mission
@@ -6,4 +7,3 @@ tgd.mission
 tge.mission
 tgf.mission
 tgg.mission
-tgh.mission

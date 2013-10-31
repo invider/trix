@@ -3,7 +3,7 @@
 echo -n 'Cleaning home...'
 
 rm -f *.tmp
-rm -f *.log
+rm -f .*.log
 rm -f *.solution*
 rm -f *.mission*
 rm -f *.key*
