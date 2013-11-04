@@ -20,5 +20,13 @@ echo -n 'Cleaning system...'
 rm -f system/server.pid
 rm -f system/server.log
 rm -f system/trix/trix.tar
+
+if [ -d ./system/trix/home ]; then
+  cd ./system/trix/home
+  find . -type f -exec rm -f ../level-1/{} \;
+  cd ../../../
+  rm -fr system/trix/home
+fi
+
 echo 'OK'
 

@@ -13,6 +13,7 @@ if [ $# -eq 2  ]; then
 
   solution=$1'-'$2'.solution'
   link=$TARGET`./.path $1.mission`$solution
+  echo $link >> .attempts
 
   if [[ `curl -Is -w '%{http_code}' -o /dev/null $link` == 200 ]]; then
 

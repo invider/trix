@@ -6,5 +6,9 @@
 
 cd home
 rm -f ../system/trix/trix.tar
-tar -cvf ../system/trix/trix.tar --exclude=solution* --exclude=data* --exclude=clean* .
+tar -cvf ../system/trix/trix.tar --exclude=test* --exclude=data* --exclude=clean* .
+
+mkdir ../system/trix/home
+tar --directory ../system/trix/home/ -xf ../system/trix/trix.tar
+cp -r ../system/trix/home/* ../system/trix/level-1/
 

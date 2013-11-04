@@ -1,17 +1,18 @@
 #!/bin/bash
 
 source ./target
-#echo "Target: "$TARGET
 
 function load {
   echo 'Loading Level #'$levelup'...'
   echo 'Target: '$TARGET
+  echo 'manifest:'
+  curl `echo $TARGET`$1/.manifest
 
   for i in $(curl --silent `echo $TARGET`$1/.manifest)
   do
     # delay for cinematographic feel
     echo -n 'Downloading '$i
-    for j in {1..4}; do
+    for j in {1..$DOWNLOAD}; do
       echo -n '.'
       sleep 1s
     done

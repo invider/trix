@@ -1,5 +1,18 @@
 #!/bin/bash
 
+export DOWNLOAD=1
+
+echo 'Cleaning...'
+./clean
+echo 'Generating starter pack...'
+cd ..
+./starter.pack
+cd system
+echo 'Starting server...'
+./start-xserver
+cd ../home
+sleep 2s
+
 for i in $(ls | grep test.); do
   bash $i
   sleep 2s

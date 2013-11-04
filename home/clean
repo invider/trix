@@ -16,6 +16,7 @@ rm -f .mo
 rm -f .d
 rm -f .location
 rm -f .solutions
+rm -f .attempts
 
 echo 'OK'
 
