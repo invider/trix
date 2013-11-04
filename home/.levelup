@@ -29,7 +29,8 @@ leveln=$(sed -e 's/^0*//'<<<"$level")
 
 if [[ $leveln = '' ]]; then
   echo 'Getting initial level'
-  load 'level-1'
+  levelup=1
+  load 'level-'$levelup
 
 else
   next=`cat .level-$level`
@@ -38,8 +39,13 @@ else
     echo 'Level Complete!'
     echo 'Level #'$leveln': '$score' >> '$next >> .level.log
     load 'level-'$levelup
-  #else
-  #  echo 'not enough score!'
+  else
+    # no upgrade, check if we asked to reload a previous level
+    if [[ $# -eq 1 && $1 -le $leveln ]]; then
+      echo 'Initiating Level Reloading...'
+      levelup=$1
+      load 'level-'$levelup
+    fi
   fi
 
 fi

@@ -29,3 +29,14 @@ else
 fi
 echo '==============='
 echo ''
+
+# check the connection to server
+./.connection
+if [ $? -ne 0 ]; then
+  echo "Important Message!!!"
+  echo ""
+  echo "Can't verify connection to the TRIX target server!"
+  echo "Make sure, that you've set TRIX server address in TARGET variable"
+  echo ""
+  exit 1
+fi

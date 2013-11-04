@@ -2,6 +2,13 @@
 
 source ./target
 
+./.connection
+if [ $? -ne 0 ]; then
+  echo "Can't verify connection to the TRIX target server!"
+  echo "Make sure, that you've set TRIX server address in $TARGET variable"
+  exit 1
+fi
+
 if [ $# -eq 2  ]; then
 
   solution=$1'-'$2'.solution'

@@ -6,5 +6,7 @@ Steps:
   in data/ls.man and data/vi.man combined
   (ignore spaces in beginning of lines)
 
+??? something doesn't work here!
+
 [key]: found number of lines
 
