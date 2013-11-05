@@ -1,0 +1,8 @@
+Mission: rsb
+
+Steps:
+
+> get the list of home folders from data/passwd and calculate the number of unique folders there
+
+[key]: number of unique home folders from data/passwd
+

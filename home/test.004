@@ -8,6 +8,12 @@ echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
 cat data/vi.man | tr -cs 'a-zA-Z' '\n' | tr '[A-Z]' '[a-z]' | sort | uniq | awk '{ if (length($0) > 2) print }' > vi.man.words.tmp
 ./solve spellcheck `diff data/english.dict vi.man.words.tmp --changed-group-format='%>' --unchanged-group-format='' | wc -l | tr -d ' '`
 
+./solve rsa `cat data/passwd | grep -v '^#' | cut -d ':' -f 1 | wc -c | tr -d ' '`
+
+./solve rsb `cat data/passwd | grep -v "^#" | cut -d ':' -f 6 | sort | uniq | wc -l`
+
+./solve rsc `cat data/passwd | grep -v "^#" | cut -d ':' -f 3-4 | wc -c | tr -d ' '`
+
 # next level
 ./.levelup
 

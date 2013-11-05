@@ -9,7 +9,7 @@ echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
 # linux
 solution=`cat data/unix.commands | awk '{print $1}' | grep -v '\-' | sed '/^$/d' | md5sum | awk '{print $1}'`
 # macosx
-#solution=`cat data/unix.commands | awk '{print $1}' | grep -v '\-' | sed '/^$/d' | md5 | awk '{print $1}'`
+solution=`cat data/unix.commands | awk '{print $1}' | grep -v '\-' | sed '/^$/d' | md5 | awk '{print $1}'`
 ./solve ugz $solution
 
 ./.levelup

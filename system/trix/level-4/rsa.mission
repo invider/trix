@@ -1,0 +1,8 @@
+Mission: rsa
+
+Steps:
+
+> get list of users from data/passwd and calculate number of characters in the output
+
+[key]: number of characters in the output
+

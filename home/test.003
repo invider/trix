@@ -12,19 +12,19 @@ echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
 ./solve tgc `cat data/vi.man | grep -vw 'option' | wc -l | tr -d ' '`
 
 # macosx
-#./solve tgd `cat data/ls.man | grep -iw -B 2 'default' | md5`
+./solve tgd `cat data/ls.man | grep -iw -B 2 'default' | md5`
 # linux
 ./solve tgd `cat data/ls.man | grep -iw -B 2 'default' | md5sum | cut -d ' ' -f 1`
 
 # macos
-#./solve tge `cat data/vi.man | grep -iw -A 3 'command' | md5`
+./solve tge `cat data/vi.man | grep -iw -A 3 'command' | md5`
 # linux
 ./solve tge `cat data/vi.man | grep -iw -A3 'command' | md5sum | cut -d ' ' -f 1`
 
 ./solve tgf `cat data/english.dict | grep '[eo]' | grep -v '[ia]' | wc -l | tr -d ' '`
 
 # macos
-#./solve tgg `cat data/english.dict | grep 'ion\>' | grep -v "'" | sort -r | md5`
+./solve tgg `cat data/english.dict | grep 'ion\>' | grep -v "'" | sort -r | md5`
 # linux
 ./solve tgg `cat data/english.dict | grep 'ion\>' | grep -v "'" | sort -r | md5sum | cut -d ' ' -f 1`
 

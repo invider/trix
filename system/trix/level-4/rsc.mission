@@ -1,0 +1,9 @@
+Mission: rsc
+
+Steps:
+
+> get both user id and group id column from data/passwd (delimited by ':')
+  and calculate the number of characters in the output
+
+[key]: number of characters in the output
+
