@@ -4,9 +4,7 @@ Steps:
 
 > determine the number of lines starting not with letter
   in data/ls.man and data/vi.man combined
-  (ignore spaces in beginning of lines)
-
-??? something doesn't work here!
+  (ignore spaces and tabs in beginning of lines, ignore empty lines)
 
 [key]: found number of lines
 

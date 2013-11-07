@@ -5,8 +5,6 @@ source ./target
 function load {
   echo 'Loading Level #'$levelup'...'
   echo 'Target: '$TARGET
-  echo 'manifest:'
-  curl `echo $TARGET`$1/.manifest
 
   for i in $(curl --silent `echo $TARGET`$1/.manifest)
   do

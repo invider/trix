@@ -1,0 +1,9 @@
+Mission: rsd
+
+Steps:
+
+> replace all occurences of 'Server' in data/passwd on 'Unix Daemon'
+> calculate number of characters in the output
+
+[key]: number of characters in the output
+

@@ -2,8 +2,8 @@ Mission: tgf
 
 Steps:
 
-> find how many words in data/english.dict contains letters 'e' and 'o'
-  but at the same time do not contain letters 'i' and 'a'
+> find how many words in data/english.dict contains letters 'e' or 'o'
+  but at the same time do not contain letters 'i' or 'a'
 
 [key]: found number of words
 

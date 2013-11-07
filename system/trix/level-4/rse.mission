@@ -1,0 +1,10 @@
+Mission: rse
+
+Steps:
+
+> set for all users in data/passwd with default shell usr/bin/false
+  a new shell - bin/bash
+> calculate number of characters in the output
+
+[key]: number of characters in the output
+
