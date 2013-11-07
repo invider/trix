@@ -17,9 +17,13 @@ function load {
       sleep 1s
     done
     wget --quiet -N -x -nH --cut-dirs=2 `echo $TARGET``echo $1`'/'$i
-    # save file location
-    echo 'file::'$i' '$1 >> .location
-    echo 'OK'
+    if [ -f $i ]; then
+      # save file location
+      echo 'file::'$i' '$1 >> .location
+      echo 'OK'
+    else
+      echo 'ERROR'
+    fi
   done
 }
 
