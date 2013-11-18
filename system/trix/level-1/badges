@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo '==========='
+echo 'Your Badges'
+echo '==========='
+
+grep -s 'Badge:' -r . --include=*.solution | cut -d ':' -f 3 | sed 's/^ *//g' | sort | uniq
+

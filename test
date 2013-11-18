@@ -1,18 +1,26 @@
 #!/bin/bash
-
+ 
 export DOWNLOAD=1
 
 echo 'Cleaning...'
 ./clean
 echo 'Generating starter pack...'
-cd ..
 ./starter.pack
+echo 'Creating output folder'
+mkdir out
+cp -R ./rec/* out/
+
 cd system
 echo 'Starting server...'
 ./start-xserver
-cd ../home
+cd ../out
 sleep 2s
 
+# download starter pack
+wget http://localhost:8908/trix/trix.tar
+tar -xf trix.tar
+
+# run all tests
 for i in $(ls | grep test.); do
   bash $i
   sleep 2s
