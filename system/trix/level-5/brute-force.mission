@@ -1,0 +1,11 @@
+Mission: brute-force
+
+Steps:
+
+* solution file is located at trix server in /trix/level-5 directory
+
+* file named as brute-force-XXX.solution, where XXX is a number
+  from 1 to 999
+
+[key]: you have to brute-force the key and download solution from the server
+      (you don't need ./solve script to solve this mission - just donwload the file)
