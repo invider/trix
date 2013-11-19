@@ -1,4 +1,0 @@
-#!/bin/bash
-
-chmod u+x .connection .level .levelup .path badges missions score setup solve start status
-

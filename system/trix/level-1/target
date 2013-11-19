@@ -1,4 +1,0 @@
-#!/bin/bash
-
-export TARGET='http://localhost:8908/trix/'
-export DOWNLOAD=4

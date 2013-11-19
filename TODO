@@ -1,2 +1,13 @@
-> [*] checker for availability of tools (e.g. curl)
+> [*] checker for availability of tools (e.g. curl) - do not start the trix shell if some missing
+> [+] help on tools and missions
+> [+] companies profiles
+> [+] cyberpunk glossary
+> [+] background story
+> [+] bonus mission packs
+> [+] credit engine (store negative credits in tool proxy files)
+? [+] minigames of some sort
+> [+] extend proxy section
+
+------------------------------------------------------------------------------------------------------------
 V [*] test server access (now it just says that solution is wrong)
+

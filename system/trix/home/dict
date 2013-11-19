@@ -1,9 +1,0 @@
-cat - concatenate files and show their contents
-cd - change directory
-cksum - calculates the checksum of the file
-ls - list the content of the directory
-md5sum - calculates the MD5 hash of the file
-pwd - print working directory
-top - monitors system performance and running processes
-wc - count the number of lines/words/characters in a file
-wget - HTTP and FTP download utility
