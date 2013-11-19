@@ -1,0 +1,79 @@
+#!/bin/bash
+
+function load {
+  echo 'Downloading Filesystem...'
+  echo 'Target: '$target
+
+  link=$target'home/MANIFEST'
+  if [[ `curl -Is -w '%{http_code}' -o /dev/null $link` == 200 ]]; then
+    for i in $(curl --silent $link)
+    do
+      # delay for cinematographic feel
+      echo -n 'Downloading '$i'...'
+      sleep 1s
+
+      wget --quiet -x -nH --cut-dirs=2 $target'home/'$i
+      if [ -f $i ]; then
+        # save file location
+        echo 'file::'$i' '$1 >> .location
+        echo 'OK'
+      else
+        echo 'ERROR'
+      fi
+    done
+  else
+    echo 'Error! Wrong server or path ('$target')'
+    echo 'Aborting install'
+  fi
+}
+
+function help {
+  echo 'TRIX installation script'
+  echo ''
+  echo '  downloads and configures trix home folder'
+  echo ''
+  echo 'Usage:'
+  echo '  ./trix.install - interactive mode'
+  echo '  ./trix.install [nickname]@[trix.server.address] - automatic mode'
+  echo ''
+  echo 'Example:'
+  echo '  ./trix.install trixer@http://localhost:8908/trix/'
+  echo ''
+}
+
+
+if [ $# -ge 1 ]; then
+  if [ $1 = 'help' ] || [ $1 = '--help' ] || [ $1 = '-h' ]; then
+    help
+    exit 1
+  else
+    echo 'Installing TRIX in local directory (automatic mode)...'
+    name=`echo $1 | cut -d '@' -f 1`
+    target=`echo $1 | cut -d '@' -f 2`
+
+    echo $name'!'$target
+  fi
+else
+  echo 'Installing TRIX in local directory...'
+
+  read -p "Enter your nickname: " name
+  read -e -p "Enter TRIX server location: " -i "localhost" server
+  read -e -p "Enter TRIX server port: " -i "8908" port
+  read -e -p "Enter TRIX path: " -i "trix" path
+
+  target='http://'$server':'$port'/'$path
+  if `echo $target | grep -vqE "/$"`
+  then
+    target=$target'/'
+  fi
+fi
+
+echo 'TRIX TARGET: '$name"@"$target
+
+load
+
+if [ -f ./.setup ]; then
+  'Setting up shell scripts...'
+  ./.setup
+fi
+
