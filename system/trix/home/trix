@@ -29,7 +29,9 @@ echo -e 'Loading kernel...'
 echo -ne $CLEAR
 echo ''
 
-export PATH=`pwd`/bin/:$PATH
+export TRIX_HOME=`pwd`
+export TRIX_BIN=$TRIX_HOME
+export PATH=`pwd`:`pwd`/bin/:$PATH
 
 bash --init-file trix.ini
 

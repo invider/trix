@@ -1,22 +1,22 @@
 #!/bin/bash
 
 # check for levelup
-./.levelup
+$TRIX_BIN/.levelup
 
 echo ''
 echo '==============='
 echo 'Your Dictionary'
 echo '==============='
-cat ./dict
+cat $TRIX_HOME/dict
 echo ''
-./missions
-./badges
+$TRIX_BIN/missions
+$TRIX_BIN/badges
 
 echo ''
 echo '==============='
-level=`./.level`
+level=`$TRIX_BIN/.level`
 leveln=$(sed -e 's/^0*//'<<<"$level")
-next=`cat .level-$level`
+next=`cat $TRIX_HOME/.level-$level`
 
 echo 'Level: '$leveln
 echo -n 'Score: '
@@ -31,7 +31,7 @@ echo '==============='
 echo ''
 
 # check the connection to server
-./.connection
+$TRIX_BIN/.connection
 if [ $? -ne 0 ]; then
   echo "Important Message!!!"
   echo ""

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./target
+source ./env
 
 function load {
   echo 'Loading Level #'$levelup'...'
@@ -10,7 +10,7 @@ function load {
   do
     # delay for cinematographic feel
     echo -n 'Downloading '$i
-    for j in {1..$DOWNLOAD}; do
+    for (( j=0; j<$DOWNLOAD; j++ )) do
       echo -n '.'
       sleep 1s
     done

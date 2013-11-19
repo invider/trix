@@ -1,6 +1,4 @@
 #!/bin/bash
- 
-export DOWNLOAD=1
 
 # setup output directory
 if [ ! -d ./out ]; then
@@ -11,8 +9,13 @@ cp -R ./solution/* out/
 cd ./out
 
 # download and run TRIX install script
-wget http://localhost:8908/trix/trix.install
+wget --quiet http://localhost:8908/trix/trix.install
 bash trix.install trixer@http://localhost:8908/trix
+
+# setup download speed
+cat ./env | sed '/DOWNLOAD/d' > ./env.new
+echo 'DOWNLOAD=0' >> ./env.new
+mv ./env.new ./env
 
 # run all tests
 for i in $(ls | grep test.); do

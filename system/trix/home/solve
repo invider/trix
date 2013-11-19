@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./target
+source ./env
 
 ./.connection
 if [ $? -ne 0 ]; then

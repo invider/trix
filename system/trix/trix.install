@@ -10,7 +10,7 @@ function load {
     do
       # delay for cinematographic feel
       echo -n 'Downloading '$i'...'
-      sleep 1s
+      #sleep 1s
 
       wget --quiet -x -nH --cut-dirs=2 $target'home/'$i
       if [ -f $i ]; then
@@ -50,8 +50,6 @@ if [ $# -ge 1 ]; then
     echo 'Installing TRIX in local directory (automatic mode)...'
     name=`echo $1 | cut -d '@' -f 1`
     target=`echo $1 | cut -d '@' -f 2`
-
-    echo $name'!'$target
   fi
 else
   echo 'Installing TRIX in local directory...'
@@ -60,20 +58,30 @@ else
   read -e -p "Enter TRIX server location: " -i "localhost" server
   read -e -p "Enter TRIX server port: " -i "8908" port
   read -e -p "Enter TRIX path: " -i "trix" path
-
   target='http://'$server':'$port'/'$path
-  if `echo $target | grep -vqE "/$"`
-  then
-    target=$target'/'
-  fi
+fi
+
+# normalize target
+if `echo $target | grep -vqE "/$"`
+then
+  target=$target'/'
 fi
 
 echo 'TRIX TARGET: '$name"@"$target
 
 load
 
+# set execution permissions
 if [ -f ./.setup ]; then
-  'Setting up shell scripts...'
-  ./.setup
+  echo 'Setting up shell scripts...'
+  bash .setup
+fi
+
+# setup environment
+if [ -f ./env ]; then
+  echo 'Setting up the environment...'
+  cat ./env | sed '/TARGET/d' > ./env.new
+  echo TARGET=$target >> ./env.new
+  mv ./env.new ./env
 fi
 

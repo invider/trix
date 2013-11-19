@@ -4,6 +4,7 @@ bin/techo
 clean
 .connection
 dict
+env
 faq.txt
 .level
 .levelup
@@ -11,10 +12,9 @@ missions
 .path
 readme.txt
 score
-setup
+.setup
 solve
 status
-target
 trix
 trix.ini
 upgrade
