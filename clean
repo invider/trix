@@ -14,6 +14,11 @@ cd home
 ./clean
 cd ..
 
+# clean output folder
+echo -n 'Cleaning output directory...'
+rm -rf ./out
+echo 'OK'
+
 # clean system folder
 echo -n 'Cleaning system...' 
 
