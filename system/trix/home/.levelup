@@ -6,10 +6,10 @@ function load {
   echo 'Loading Level #'$levelup'...'
   echo 'Target: '$TARGET
 
-  for i in $(curl --silent `echo $TARGET`$1/.manifest)
+  for i in $(curl --silent `echo $TARGET`$1/MANIFEST)
   do
     # delay for cinematographic feel
-    echo -n 'Downloading '$i
+    echo -n 'Downloading '$i'.'
     for (( j=0; j<$DOWNLOAD; j++ )) do
       echo -n '.'
       sleep 1s

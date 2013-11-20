@@ -9,10 +9,23 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-if [ $# -eq 2  ]; then
+if [ $# -ge 2 ]; then
 
-  solution=$1'-'$2'.solution'
-  link=$TARGET`./.path $1.mission`$solution
+  # handle input parameters
+  silent=0
+  if [ $# -ge 3 ]; then
+    if [ $1 == '--silent' ]; then
+      silent=1
+      mission=$2
+      key=$3
+    fi
+  else
+    mission=$1
+    key=$2
+  fi
+
+  solution=$mission'-'$key'.solution'
+  link=$TARGET`./.path $mission.mission`$solution
   echo $link >> .attempts
 
   if [[ `curl -Is -w '%{http_code}' -o /dev/null $link` == 200 ]]; then
@@ -20,20 +33,30 @@ if [ $# -eq 2  ]; then
     echo $link >> .solutions
     wget --quiet -N $link
 
-    chmod +x ./$solution
-    ./$solution
+    if [ -f ./$solution ]; then
+        chmod +x ./$solution
+        ./$solution
+
+       if [ $silent -eq 0 ]; then
+         echo '________________________________________'
+         echo ' - '$mission' - ' 
+         echo 'Mission Success!!!'
+         echo 'Score: +'`cat ./$solution | grep 'Solution: ' | cut -d ' ' -f 4 | tr -d '\n' | wc -c`
+         cat ./$solution | grep 'Badge: ' | sed 's/#/!!!/g'
+       fi
+    fi
 
   else
     echo ''
     echo '>>> Wrong Solution! <<<'
     echo ''
 
-    if [ ! -f $1.mission ]; then
-      echo "Be aware, agent! It looks like you've been framed - there is no mission named ["$1"]"
+    if [ ! -f $mission.mission ]; then
+      echo "Be aware, agent! It looks like you've been framed - there is no mission named ["$mission"]"
       echo 'run ./status to see the list of available open missions'
       echo 'and then find [mission-name].mission with mission details'
     else
-      echo 'Be careful, agent! Your solution key ('$2') seems to be wrong'
+      echo 'Be careful, agent! Your solution key ('$key') seems to be wrong'
       echo 'the rival corporations are monitoring all failed attempts,'
       echo 'and your location could be traced!'
     fi
