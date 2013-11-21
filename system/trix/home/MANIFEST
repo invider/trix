@@ -1,16 +1,14 @@
 badges
 bin/status
-bin/techo
 clean
 .connection
 dict
 env
-faq.txt
 .level
 .levelup
+mail
 missions
 .path
-readme.txt
 score
 .setup
 solve

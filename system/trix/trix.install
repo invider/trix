@@ -110,6 +110,9 @@ if [ -f ./env ]; then
   mv ./env.new ./env
 fi
 
+# create layout
+mkdir bak
+
 # show status and load initial level
 ./status
 
