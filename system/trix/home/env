@@ -2,3 +2,4 @@
 
 export TARGET='http://localhost:8908/trix/'
 export DOWNLOAD=3
+export REPORT=1

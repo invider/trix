@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>TRIX Leaderboard</title>
+    
+<script type="text/javascript" src="js/jquery.js"></script> 
+
+<script>
+    
+    function update() {
+        $.get("/htbin/leader/top", function(data){
+                $("#top").text(data)
+            });
+    }
+    
+    (function() {
+        setInterval(this.update, 2000)
+    })();
+</script>
+    
+</head>
+<body>
+<h1>TRIX Leaderboard</h1>
+
+<pre>
+<div id=top></div>
+</pre>
+    
+</body>
+</html>

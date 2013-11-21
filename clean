@@ -18,7 +18,7 @@ echo -n 'Cleaning system...'
 
 rm -f system/server.pid
 rm -f system/server.log
-rm -f system/trix/trix.tar
+rm -f system/htbin/leader/*.score
 
 echo 'OK'
 

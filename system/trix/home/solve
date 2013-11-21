@@ -41,8 +41,11 @@ if [ $# -ge 2 ]; then
          echo '________________________________________'
          echo ' - '$mission' - ' 
          echo 'Mission Success!!!'
-         echo 'Score: +'`cat ./$solution | grep 'Solution: ' | cut -d ' ' -f 4 | tr -d '\n' | wc -c`
+         echo 'Score: +'`cat ./$solution | grep 'Solution: ' | cut -d ' ' -f 4 | tr -d '\n' | wc -c | tr -d ' '`
          cat ./$solution | grep 'Badge: ' | sed 's/#/!!!/g'
+       fi
+       if [ $REPORT -eq 1 ]; then
+         curl -s $TARGET'../htbin/leader/report.py?login='$LOGIN'&score='`./score` > /dev/null
        fi
     fi
 

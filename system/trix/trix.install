@@ -82,6 +82,7 @@ if [ -f ./env ]; then
   echo 'Setting up the environment...'
   cat ./env | sed '/TARGET/d' > ./env.new
   echo TARGET=$target >> ./env.new
+  echo LOGIN=$name >> ./env.new
   mv ./env.new ./env
 fi
 

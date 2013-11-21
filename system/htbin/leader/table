@@ -1,0 +1,6 @@
+#!/bin/bash
+
+for f in htbin/leader/*.score; do
+  echo -n `echo $f | cut -d '/' -f 3 | cut -d '.' -f 1`
+  echo ':'`tail -n 1 $f`
+done
