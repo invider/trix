@@ -53,11 +53,11 @@ if [ $# -ge 1 ]; then
   fi
 else
   echo 'Installing TRIX in local directory...'
-
-  read -p "Enter your nickname: " name
+ 
   read -e -p "Enter TRIX server location: " -i "localhost" server
   read -e -p "Enter TRIX server port: " -i "8908" port
   read -e -p "Enter TRIX path: " -i "trix" path
+  read -p "Enter your nickname: " name
   target='http://'$server':'$port'/'$path
 fi
 
@@ -86,3 +86,8 @@ if [ -f ./env ]; then
   mv ./env.new ./env
 fi
 
+# show status and load initial level
+./status
+
+# hide install
+mv trix.install .trix.install
