@@ -45,7 +45,7 @@ if [ $# -ge 2 ]; then
          cat ./$solution | grep 'Badge: ' | sed 's/#/!!!/g'
        fi
        if [ $REPORT -eq 1 ]; then
-         curl -s $TARGET'../htbin/leader/report.py?login='$LOGIN'&score='`./score` > /dev/null
+         curl -s $TARGET'../htbin/report.py?login='$LOGIN'&score='`./score` > /dev/null
        fi
     fi
 
