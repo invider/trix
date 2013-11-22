@@ -57,5 +57,7 @@ if [ $# -eq 0 ]; then
 fi
 
 msg=$1
+msg=`echo $msg | sed 's/.mail$//' | sed 's/.mission$//'`
+
 read
 

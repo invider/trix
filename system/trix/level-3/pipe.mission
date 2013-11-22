@@ -1,0 +1,10 @@
+Mission: pipe
+
+Reward: **
+
+Steps:
+
+> create a pipeline, that calculates the number of symbols in this message
+
+[key]: the key is the number of symbols in this message
+

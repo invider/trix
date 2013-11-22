@@ -5,5 +5,7 @@ Steps:
 > determine the number of lines containing the word 'like'
   in data/ls.man
 
+> ignore case
+
 [key]: found number of lines
 
