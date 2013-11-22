@@ -4,28 +4,12 @@ echo ''
 echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
 echo '                       Solving Level 2'
 echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
+#
+# load level
+#./status
+./.levelup
 
-# unpack .tar
-tar -xf data.tar
-
-# ugb
-./solve ugb `cat data/vi.man | grep '^specified' | wc -l | tr -d ' '`
-
-# ugc
-./solve ugc `cat data/vi.man | grep 'specified$' | wc -l | tr -d ' '`
-
-# ugd
-./solve ugd `cat data/vi.man | grep 'c.r' | wc -l | tr -d ' '`
-
-# uge
-./solve uge `cat data/vi.man | grep '^[A-Z][to]' | wc -l | tr -d ' '`
-
-# ugf
-./solve ugf `cat data/vi.man | grep '^[a-z]\{7\}' | wc -l | tr -d ' '`
-
-# ugg
-./solve ugg `cat data/vi.man | grep 'ion\>' | wc -l | tr -d ' '`
- 
+./solve second 2
 
 # next level
 ./.levelup

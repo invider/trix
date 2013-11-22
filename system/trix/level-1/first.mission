@@ -1,0 +1,12 @@
+Mission: first
+
+Reward: *
+
+Steps:
+
+> solve the mission with ./solve tool using provided key
+
+> run ./solve and provide mission name and solution key as the parameters
+
+[key]: the key is 'key'
+

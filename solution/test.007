@@ -1,0 +1,18 @@
+#!bin/bash
+
+echo ''
+echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
+echo '                     Solving Level 5'
+echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
+
+# ugz
+# linux
+solution=`cat data/unix.commands | awk '{print $1}' | grep -v '-' | sed '/^$/d'| md5sum | cut -d ' ' -f 1`
+./solve ugz $solution
+
+# macosx
+solution=`cat data/unix.commands | awk '{print $1}' | grep -v '-' | sed '/^$/d'| md5 | cut -d ' ' -f 1`
+./solve ugz $solution
+
+./.levelup
+

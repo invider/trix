@@ -5,6 +5,6 @@ n=`ls -1 htbin/leader | grep '.score$' | wc -l | tr -d ' '`
 if [ $n -ge 1 ]; then
   for f in htbin/leader/*.score; do
     echo -n `echo $f | cut -d '/' -f 3 | cut -d '.' -f 1`
-    echo ':'`tail -n 1 $f`
+    echo ': '`tail -n 1 $f`
   done
 fi

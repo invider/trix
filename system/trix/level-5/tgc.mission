@@ -4,5 +4,9 @@ Steps:
 
 > how many lines in data/vi.man not contain the word 'option'?
 
+> consider only lowercased 'option'
+
+> include empty lines in the result
+
 [key]: found number of lines
 

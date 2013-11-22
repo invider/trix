@@ -1,0 +1,29 @@
+
+===============
+Welcome to TRIX
+===============
+
+Your are about to start a journey through the wonderful UNIX landscape.
+
+This world of files and pipes is at the end of your fingertips,
+waiting to be discovered. Take that journey and you will master
+the UNIX shell and look into the deepest places on the filesystem.
+
+-----
+Tools
+-----
+
+There are tools that could help you track your progress.
+
+./mail - get and read messages
+./status - shows the overall progress
+./score - shows current score for completed missions
+./badges - shows badges received
+./missions - shows completed and open missions
+------------------------------------------------------------------
+
+Your first mission called 'first', look @ description to solve it.
+
+
+Good luck!
+

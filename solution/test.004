@@ -2,21 +2,32 @@
 
 echo ''
 echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
-echo '                       Solving Level 4'
+echo '                       Solving Level 2'
 echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
 
-cat data/vi.man | tr -cs 'a-zA-Z' '\n' | tr '[A-Z]' '[a-z]' | sort | uniq | awk '{ if (length($0) > 2) print }' > vi.man.words.tmp
-./solve spellcheck `diff data/english.dict vi.man.words.tmp --changed-group-format='%>' --unchanged-group-format='' | wc -l | tr -d ' '`
+./.levelup
 
-./solve rsa `cat data/passwd | grep -v '^#' | cut -d ':' -f 1 | wc -m | tr -d ' '`
+# unpack .tar
+tar -xf data.tar
 
-./solve rsb `cat data/passwd | grep -v "^#" | cut -d ':' -f 6 | sort | uniq | wc -l`
+# ugb
+./solve ugb `cat data/vi.man | grep '^specified' | wc -l | tr -d ' '`
 
-./solve rsc `cat data/passwd | grep -v "^#" | cut -d ':' -f 3-4 | wc -m | tr -d ' '`
+# ugc
+./solve ugc `cat data/vi.man | grep 'specified$' | wc -l | tr -d ' '`
 
-./solve rsd `cat data/passwd | sed 's/Server/Unix Daemon/g' | wc -m | tr -d ' '`
+# ugd
+./solve ugd `cat data/vi.man | grep 'c.r' | wc -l | tr -d ' '`
 
-./solve rse `cat data/passwd | sed 's/usr\/bin\/false/bin\/bash/g' | wc -m | tr -d ' '`
+# uge
+./solve uge `cat data/vi.man | grep '^[A-Z][to]' | wc -l | tr -d ' '`
+
+# ugf
+./solve ugf `cat data/vi.man | grep '^[a-z]\{7\}' | wc -l | tr -d ' '`
+
+# ugg
+./solve ugg `cat data/vi.man | grep 'ion\>' | wc -l | tr -d ' '`
+ 
 
 # next level
 ./.levelup

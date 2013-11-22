@@ -37,6 +37,7 @@ if [ $# -ge 2 ]; then
         chmod +x ./$solution
         ./$solution
 
+       # show success
        if [ $silent -eq 0 ]; then
          echo '________________________________________'
          echo ' - '$mission' - ' 
@@ -44,9 +45,15 @@ if [ $# -ge 2 ]; then
          echo 'Score: +'`cat ./$solution | grep 'Solution: ' | cut -d ' ' -f 4 | tr -d '\n' | wc -c | tr -d ' '`
          cat ./$solution | grep 'Badge: ' | sed 's/#/!!!/g'
        fi
+
+       # report success
        if [ $REPORT -eq 1 ]; then
          curl -s $TARGET'../htbin/report.py?login='$LOGIN'&score='`./score` > /dev/null
        fi
+
+       # backup success
+       mv './'$mission'.mission' bak/
+       mv './'$solution bak/
     fi
 
   else

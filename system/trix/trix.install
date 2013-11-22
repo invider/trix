@@ -24,6 +24,7 @@ function load {
   else
     echo 'Error! Wrong server or path ('$target')'
     echo 'Aborting install'
+    exit 1
   fi
 }
 
@@ -53,11 +54,34 @@ if [ $# -ge 1 ]; then
   fi
 else
   echo 'Installing TRIX in local directory...'
- 
-  read -e -p "Enter TRIX server location: " -i "localhost" server
-  read -e -p "Enter TRIX server port: " -i "8908" port
-  read -e -p "Enter TRIX path: " -i "trix" path
+
+  # commented out, since works only with bash 4
+  #read -e -p "Enter TRIX server location: " -i "localhost" server
+  #read -e -p "Enter TRIX server port: " -i "8908" port
+  #read -e -p "Enter TRIX path: " -i "trix" path
+  #read -p "Enter your nickname: " name
+
+  server=localhost
+  port=8908
+  path=trix
+
+  read -p "Enter TRIX server location [localhost]: " server
+  if [ -z "$server" ]; then
+    server=localhost
+  fi
+
+  read -p "Enter TRIX server port [8908]: " port
+  if [ -z "$port" ]; then
+    port=8908
+  fi
+
+  read -p "Enter TRIX path [trix]: " path
+  if [ -z "$path" ]; then
+    path=trix
+  fi
+  
   read -p "Enter your nickname: " name
+
   target='http://'$server':'$port'/'$path
 fi
 
@@ -85,6 +109,9 @@ if [ -f ./env ]; then
   echo LOGIN=$name >> ./env.new
   mv ./env.new ./env
 fi
+
+# create layout
+mkdir bak
 
 # show status and load initial level
 ./status

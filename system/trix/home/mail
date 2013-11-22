@@ -1,0 +1,63 @@
+#!/bin/bash
+
+function list {
+  echo '============='
+  echo '    Inbox    '
+  echo '============='
+
+  i=1
+  for f in `find . -name "*.mail" -o -name "*.mission" -type f | grep -v 'bak/'`; do
+    file=$(basename "$f")
+    title=`echo $file | sed 's/.mail$//' | sed 's/.mission$//'`
+    echo $i': '$title
+    (( i += 1 ))
+  done
+
+  echo '------------------------------------------------------------'
+  echo 'run ./mail [mail title] or ./mail [#] to read the message'
+  echo 'move message file to bak/ if you no longer need it'
+  echo ''
+}
+
+function show {
+  echo '------------------------------------------------------------'
+  echo $1': '$2
+  echo '------------------------------------------------------------'
+  cat $3
+  echo '------------------------------------------------------------'
+}
+
+function read {
+  i=1
+  for f in `find . -name "*.mail" -o -name "*.mission"  -type f | grep -v 'bak/'`; do
+    file=$(basename "$f")
+    title=`echo $file | sed 's/.mail$//' | sed 's/.mission$//'`
+
+    
+    if [[ $title = $msg || i -eq $msg ]]; then
+      show $i $title $f
+    fi
+    (( i += 1 ))
+  done
+
+}
+
+function bak {
+  echo 'backing up...'
+}
+
+# check for levelup
+echo 'checking mail...'
+./.levelup
+
+
+if [ $# -eq 0 ]; then
+  list 0
+  exit 0
+fi
+
+msg=$1
+msg=`echo $msg | sed 's/.mail$//' | sed 's/.mission$//'`
+
+read
+

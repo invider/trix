@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Solution: first *
+# Badge: trixer
+
+echo 'You are a TRIXER now!'
+

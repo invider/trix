@@ -7,13 +7,9 @@ echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
 #
 # load level
 #./status
-./.levelup
+#./.levelup
 
-# - solve -
-# cat ./data.001.dat > solve
-#chmod +x solve
-chmod +x ./solve.key
-./solve solve `./solve.key`
+./solve first key
 
 # next level
 ./.levelup
