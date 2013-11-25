@@ -40,3 +40,9 @@ if [ $? -ne 0 ]; then
   echo ""
   exit 1
 fi
+
+# report current status
+if [ $REPORT -eq 1 ]; then
+  curl -s $TARGET'../htbin/report.py?login='$LOGIN'&score='`./score` > /dev/null
+fi
+

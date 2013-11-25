@@ -5,6 +5,8 @@ Steps:
 > print all lines that contain the word 'command' with 3 lines that follow each such line
   in data/vi.man
 
+> ignore case
+
 > calculate md5 hashsum of the output
 
 [key]: found md5 hashsum
