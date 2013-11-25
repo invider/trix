@@ -1,5 +1,6 @@
 system/server.pid
 system/server.log
+system/htbin/leader/*.score
 
 out*
 

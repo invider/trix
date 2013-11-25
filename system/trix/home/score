@@ -1,4 +1,4 @@
 #!/bin/bash
 
-grep -s 'Solution:' -r . --include=*.solution | awk '{printf $2;printf " ";print $3}' | sort | uniq | awk '{printf $2}' | wc -c | tr -d ' '
+grep -s 'Solution:' -r . --include=*.solution | awk '{printf $3;printf " ";print $4}' | sort | uniq | awk '{printf $2}' | wc -c | tr -d ' '
 

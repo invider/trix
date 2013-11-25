@@ -1,4 +1,5 @@
 #!/bin/bash
+source ./env
 
 # check for levelup
 ./.levelup
@@ -42,7 +43,7 @@ if [ $? -ne 0 ]; then
 fi
 
 # report current status
-if [ $REPORT -eq 1 ]; then
+if [[ $REPORT -eq 1 ]]; then
   curl -s $TARGET'../htbin/report.py?login='$LOGIN'&score='`./score` > /dev/null
 fi
 
