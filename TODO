@@ -8,6 +8,7 @@
 > [+] credit engine (store negative credits in tool proxy files)
 ? [+] minigames of some sort
 > [+] extend proxy section
+> [-] fix spellcheck - dictionary contains capital letter words
 
 ------------------------------------------------------------------------------------------------------------
 V [*] test server access (now it just says that solution is wrong)
