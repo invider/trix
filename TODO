@@ -1,3 +1,4 @@
+> [?] check the possiblity to use chroot for the trix shell
 > [*] checker for availability of tools (e.g. curl) - do not start the trix shell if some missing
 > [+] leaderboard
 > [+] help on tools and missions
